@@ -1,16 +1,23 @@
 Iniciando aplicação:   npx create-expo-app igniteGym –template
 instalando babel:  npm install  -–save-dev babel-plugin-module-resolver
 Mapear as pastas
-instalando plugin dentro do babel.config.js
+instalando plugin dentro do babel.config.js: 
+<img width="248" alt="babel config" src="https://github.com/ersantoli/GymApp/assets/74686375/e280140b-a227-4438-b75e-43eaa59daac6">
 
-: 
+
 Configurando tsconfig.json:
+
+<img width="235" alt="tsconfi json" src="https://github.com/ersantoli/GymApp/assets/74686375/207ac4c5-28fe-4b58-b455-015bf6c7e264">
+
  
 Instalando as fontes: npx expo install expo-font @expo-google-fonts/roboto
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 
 imagem do App.tsx:
- 
+
+
+ <img width="401" alt="app tsx" src="https://github.com/ersantoli/GymApp/assets/74686375/7bb7fd37-a03a-4a36-8825-93414ca3499e">
+
 
 Criar a pasta src e incluir os assets
 
@@ -21,6 +28,7 @@ native base: Npm install native-base
 react native svg: expo install react-native-svg@12.1.1
 react native safe area content: expo install react-native-safe-area-context@3.3.2
 native base provider: <NativeBaseProvider><NativeBaseProvider/>
+ 
 return (
 <NativeBaseProvider>
 <StatusBar
@@ -34,7 +42,10 @@ translucent />
 );
 
 Criando um component Load
+
 Criar uma pasta components dentro da pasta src
+ 
+  <img width="130" alt="Load" src="https://github.com/ersantoli/GymApp/assets/74686375/e5ab72d8-f976-47b9-8954-ae8ba72ff77b">
  
 Dentro do Load.tsx:
 import {Spinner, Center} from 'native-base'
@@ -49,9 +60,15 @@ return(
 }
 
 Agora carregar esse componente dentro do app.tsx
+ 
 {fontsLoaded ? <View/>: <Load/>}
 Criando pasta para o tema da aplicação:
+ 
 Dentro do src criar uma pasta theme/index.ts
+ 
+ 
+ <img width="129" alt="index ts" src="https://github.com/ersantoli/GymApp/assets/74686375/23b72faa-c428-4188-8d01-b9ee2f61fb05">
+
  
 Conteudo do index:
 import { extendTheme } from 'native-base';
@@ -92,7 +109,9 @@ sizes: {
 33: 148
 }
 });
+ 
 Ultilizando nos components:
+ 
 App.tsx
 return (
 <NativeBaseProvider theme={THEME}>
@@ -106,7 +125,11 @@ return(
 )
 
 Criando a tela de Login
+ 
 Criar pasta de Screens dentro da src, criar aquivo Signin.tsx:
+ 
+ <img width="92" alt="Signin tsx" src="https://github.com/ersantoli/GymApp/assets/74686375/ab6a62a3-e40c-4bfa-9c61-d3b7c9952266">
+
  
 Conteudo do SignIn.tsx:
 import { VStack, Image } from "native-base"
@@ -130,6 +153,9 @@ Por padrao o react native nao exibe svg, por isso vamos instalar o react native 
 Npm i react-native-svg-transformer -–save-dev
 Apos isso criar o metro.config.js
  
+ 
+ <img width="101" alt="metro config js" src="https://github.com/ersantoli/GymApp/assets/74686375/31f0f5ff-a4b0-4cfa-b157-9c3ffad63221">
+
 Conteudo do arquivo:
 const { getDefaultConfig } = require("expo/metro-config");
 
@@ -154,6 +180,9 @@ return config;
 Criar uma pasta Type para a aplicação reconhecer os formatos das  
 imagens png e svg,dentro dessa pasta criar os arquivos
  
+ 
+ <img width="113" alt="pasta type" src="https://github.com/ersantoli/GymApp/assets/74686375/16249caa-0a8a-49c5-92d9-8449855ca1bf">
+
 
  
 Dentro do png.d.ts
@@ -161,6 +190,7 @@ declare module "*.svg";
 
  
 dentro do svg.d.ts:
+ 
 declare module "*.svg" {
 import React from 'react';
 import { SvgProps } from "react-native-svg";
@@ -171,6 +201,8 @@ export default content;
 Criando o input dentro da pasta components:
  
 Conteudo do Imput
+ <img width="111" alt="Input" src="https://github.com/ersantoli/GymApp/assets/74686375/b7ddb527-3742-4490-bfdc-8f416be28793">
+
 import { Input as NativeBaseInput,IInputProps } from "native-base";
 
 export function Input( {...rest}: IInputProps ){
